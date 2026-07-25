@@ -1,0 +1,127 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "assets/uploads"
+public_folder: "/assets/uploads"
+
+
+collections:
+  - name: "settings"
+    label: "Сайтын мэдээлэл"
+    files:
+      - name: "site"
+        label: "Үндсэн мэдээлэл"
+        file: "content/site.json"
+        format: "json"
+        fields:
+          - { label: "Browser гарчиг", name: "site_title", widget: "string" }
+          - { label: "Лого", name: "logo_image", widget: "image" }
+
+          - { label: "Hero жижиг гарчиг", name: "hero_eyebrow", widget: "string" }
+          - { label: "Hero том гарчиг", name: "hero_title", widget: "string" }
+          - { label: "Hero тайлбар", name: "hero_text", widget: "text" }
+          - { label: "Hero зураг", name: "hero_image", widget: "image" }
+          - label: "Үндсэн товч"
+            name: "hero_primary_button"
+            widget: "object"
+            fields:
+              - { label: "Бичвэр", name: "label", widget: "string" }
+              - { label: "Холбоос", name: "url", widget: "string" }
+          - label: "Хоёрдогч товч"
+            name: "hero_secondary_button"
+            widget: "object"
+            fields:
+              - { label: "Бичвэр", name: "label", widget: "string" }
+              - { label: "Холбоос", name: "url", widget: "string" }
+
+          - label: "Статистик"
+            name: "stats"
+            widget: "list"
+            min: 1
+            fields:
+              - { label: "Тоо", name: "value", widget: "string" }
+              - { label: "Тайлбар", name: "label", widget: "string" }
+
+          - { label: "Компанийн жижиг гарчиг", name: "company_kicker", widget: "string" }
+          - { label: "Компанийн гарчиг", name: "company_title", widget: "string" }
+          - { label: "Компанийн товч тайлбар", name: "company_lead", widget: "text" }
+          - label: "Компанийн дэлгэрэнгүй мэдээлэл"
+            name: "company_paragraphs"
+            widget: "list"
+            field: { label: "Догол мөр", name: "paragraph", widget: "text" }
+          - label: "Компанийн үнэт зүйлс"
+            name: "company_values"
+            widget: "list"
+            fields:
+              - label: "Icon"
+                name: "icon"
+                widget: "select"
+                options: ["target", "spark", "shield", "learning", "cloud", "document"]
+              - { label: "Гарчиг", name: "title", widget: "string" }
+              - { label: "Тайлбар", name: "text", widget: "text" }
+
+          - { label: "Эхний өдрийн жижиг гарчиг", name: "first_day_kicker", widget: "string" }
+          - { label: "Эхний өдрийн гарчиг", name: "first_day_title", widget: "string" }
+          - { label: "Эхний өдрийн тайлбар", name: "day_intro", widget: "text" }
+          - label: "Эхний өдрийн алхмууд"
+            name: "day_steps"
+            widget: "list"
+            fields:
+              - { label: "Цаг", name: "time", widget: "string" }
+              - { label: "Гарчиг", name: "title", widget: "string" }
+              - { label: "Тайлбар", name: "description", widget: "text" }
+          - { label: "Checklist гарчиг", name: "checklist_title", widget: "string" }
+          - label: "Checklist"
+            name: "checklist"
+            widget: "list"
+            field: { label: "Мөр", name: "item", widget: "string" }
+
+          - { label: "Системийн жижиг гарчиг", name: "systems_kicker", widget: "string" }
+          - { label: "Системийн гарчиг", name: "systems_title", widget: "string" }
+          - { label: "Системийн тайлбар", name: "systems_intro", widget: "text" }
+          - label: "Хэрэгтэй системүүд"
+            name: "systems"
+            widget: "list"
+            fields:
+              - label: "Icon"
+                name: "icon"
+                widget: "select"
+                options: ["desktop", "book", "learning", "cloud", "document", "video", "shield"]
+              - { label: "Нэр", name: "name", widget: "string" }
+              - { label: "Тайлбар", name: "description", widget: "text" }
+              - { label: "Төлөв", name: "status", widget: "string" }
+              - { label: "Товчны бичвэр", name: "button_text", widget: "string" }
+              - { label: "Холбоос", name: "url", widget: "string" }
+
+          - { label: "Материалын жижиг гарчиг", name: "resources_kicker", widget: "string" }
+          - { label: "Материалын гарчиг", name: "resources_title", widget: "string" }
+          - label: "Материалууд"
+            name: "resources"
+            widget: "list"
+            fields:
+              - label: "Icon"
+                name: "icon"
+                widget: "select"
+                options: ["document", "book", "learning", "video", "shield", "cloud"]
+              - { label: "Төрөл", name: "type", widget: "string" }
+              - { label: "Гарчиг", name: "title", widget: "string" }
+              - { label: "Тайлбар", name: "text", widget: "text" }
+              - { label: "Товчны бичвэр", name: "button_text", widget: "string" }
+              - { label: "Холбоос эсвэл файл", name: "url", widget: "string" }
+
+          - { label: "FAQ жижиг гарчиг", name: "faq_kicker", widget: "string" }
+          - { label: "FAQ гарчиг", name: "faq_title", widget: "string" }
+          - label: "FAQ"
+            name: "faq"
+            widget: "list"
+            fields:
+              - { label: "Асуулт", name: "question", widget: "string" }
+              - { label: "Хариулт", name: "answer", widget: "text" }
+
+          - { label: "Холбоо барих жижиг гарчиг", name: "contact_kicker", widget: "string" }
+          - { label: "Холбоо барих гарчиг", name: "contact_title", widget: "string" }
+          - { label: "Холбоо барих тайлбар", name: "contact_text", widget: "text" }
+          - { label: "Имэйл", name: "contact_email", widget: "string" }
+          - { label: "Товчны бичвэр", name: "contact_button", widget: "string" }
+          - { label: "Footer", name: "footer_text", widget: "string" }
